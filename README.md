@@ -2,7 +2,7 @@
 
 Manual mapping feature handles user manual anotations through excel files to cpi_prod_dim table
 
-##### Jobs
+### Jobs
 #### - mapping_export_job (weekly or manually trigerred)
   - extracts partitioned data into formatted excel spreadsheets ()
   - put the excel files into '/{sub_sector}/New/' directory in pgone Sharepoint
