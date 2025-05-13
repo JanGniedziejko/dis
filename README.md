@@ -14,7 +14,7 @@ Manual mapping feature handles user manual anotations through excel files to cpi
 ```txt
 
 kondo/
-├── manual_mapping/
+└── manual_mapping/
     ├── mapping_export_job/
     │   ├──
     │   └── 
