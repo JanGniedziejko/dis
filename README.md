@@ -4,11 +4,21 @@ Manual mapping feature handles user manual anotations through excel files to cpi
 
 ##### Jobs
 - mapping_export_job (weekly or manually trigerred)
-  - extracts partitioned data to Sharepoint as excel spreadsheets for users
-  - Format the excels (locking cells, set allowed values, etc.)
-- mapping_import_job 
-  - processes annotated files from user input folder
-  - updates cpi_prod_dim_table with data extracted from users
+  - extracts partitioned data into formatted excel spreadsheets ()
+  - put the excel files into '/{sub_sector}/New/' directory in pgone Sharepoint
+ 
+- mapping_import_job (trigerred frequently everyday)
+  - detect freshly annotated files from user input folder
+  - -   if new files are detected:
+  - - - check if the file structure is proper:
+      - - if it's proper:
+        - - label records into processed/rejected with the reason of rejection
+          - - for processed records:
+            - - update cpi_prod_dim_table with data extracted from users
+              - move the excel file to '/{sub_sector}/Processed/' directory
+          - - for rejected records:
+            - - create a new excel file in '/{sub_sector}/Rejected/' directory
+    
 
 ##### Folder structure
 ```txt
@@ -16,8 +26,8 @@ Manual mapping feature handles user manual anotations through excel files to cpi
 kondo/
 └── manual_mapping/
     ├── mapping_export_job/
-    │   ├──
-    │   └── 
+    │   ├── export_job.py
+    │   └── styling_excel.py 
     │
     ├── mapping_import_job/
     │   └── tasks
