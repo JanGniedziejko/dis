@@ -9,14 +9,13 @@ Manual mapping feature handles user manual anotations through excel files to cpi
  
 - mapping_import_job (trigerred frequently everyday)
   - detect freshly annotated files from user input folder
-    - if new files are detected:
-      - check if the file structure is proper:
-        - label records into processed/rejected with the reason of rejection
-          - for processed records:
-            - update cpi_prod_dim_table with data extracted from users
-            - move the excel file to '/{sub_sector}/Processed/' directory
-          - for rejected records:
-            - create a new excel file in '/{sub_sector}/Rejected/' directory
+    - check the file structure:
+      - label records into processed/rejected with the reason of rejection
+        - for processed records:
+          - update cpi_prod_dim_table with data extracted from users
+          - move the excel file to '/{sub_sector}/Processed/' directory
+        - for rejected records:
+          - create a new excel file in '/{sub_sector}/Rejected/' directory
     
 
 ##### Folder structure
