@@ -13,17 +13,20 @@ Manual mapping feature handles user manual anotations through excel files to cpi
 ##### Folder structure
 ```txt
 
-kondo
- |----manual_mapping
-       |----mapping_export_job
-            |-export_job.py  # when job = notebook
-            |-formatting_excel_files.py
-       |----mapping_import_job
-            |----tasks # when job = pipeline of notebooks
-                  |-1_detect_files_task.py
-                  |-2_excel_files_detected.py
-                  |-3_validate_excel_file_task.py
-                  |-4_1_apply_accepted_records.py
-                  |-4_2_handle_rejected_records.py
-                  |-5_move_processed_files.py
+kondo/
+├── manual_mapping/
+    ├── mapping_export_job/
+    │   ├──
+    │   └── 
+    │
+    ├── mapping_import_job/
+    │   └── tasks
+    │       ├── 1_detect_files_task.py
+    │       ├── 2_excel_files_detected.py
+    │       ├── 3_validate_excel_file_task.py
+    │       ├── 4_1_apply_accepted_records.py
+    │       ├── 4_2_handle_rejected_records.py
+    │       └── 5_move_processed_files.py
+    │
+    └── README.md  # documentation
 ```
